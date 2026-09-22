@@ -98,6 +98,9 @@ Veja [.env.example](./.env.example) para detalhes completos.
 ### Shutdown gracioso via SIGINT
 ![Graceful shutdown - logs de encerramento no stdout](./docs/images/03-graceful-shutdown.png)
 
+### Health check em producao (Vercel)
+![Health check em producao - environment: production](./docs/images/04-health-vercel.png)
+
 ---
 
 ## Shutdown Gracioso (Factor IX)
@@ -116,7 +119,22 @@ $env:PORT="3000"; $env:NODE_ENV="development"; $env:APP_NAME="twelve-factor-api"
 
 ## Deploy
 
-URL publica: **https://twelve-factor-api-aguiarphh.vercel.app**
+URL publica: **https://twelve-factor-api.vercel.app**
+
+```bash
+curl https://twelve-factor-api.vercel.app/health
+```
+
+Resposta em producao:
+```json
+{
+  "status": "ok",
+  "app": "twelve-factor-api",
+  "environment": "production",
+  "timestamp": "2026-09-22T19:43:47.650Z",
+  "uptime_seconds": 84
+}
+```
 
 Variaveis configuradas no Vercel:
 - `NODE_ENV=production`
