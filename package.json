@@ -1,0 +1,24 @@
+{
+  "name": "twelve-factor-api",
+  "version": "1.0.0",
+  "description": "Minimal HTTP service scaffold following the Twelve-Factor App methodology",
+  "main": "src/app.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "node -r dotenv/config src/app.js",
+    "build": "echo 'No build step required for Node.js — dependencies already installed'",
+    "test": "node -e \"require('./src/app.js'); console.log('App loaded OK'); process.exit(0);\""
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "keywords": ["twelve-factor", "api", "health-check", "cloud-native"],
+  "author": "Aguiarphh",
+  "license": "MIT"
+}
